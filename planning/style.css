@@ -1,0 +1,783 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background-color: rgb(247, 246, 246);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    background-color: #fff;
+    width: 65%;
+    height: 75%;
+    border-radius: 5px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0,0.3);
+    display: flex;
+}
+
+.sideBar{
+    background-color: rgb(232, 230, 230);
+    flex: 1;
+}
+
+.sideBar input{
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255,0.6);
+}
+
+.sideBar input:focus{
+    outline: none;
+    border: 2px solid rgb(227, 154, 166);
+}
+
+.content{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.input select{
+    width: 90%;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.input select:focus{
+    outline: 0;
+    border: 2px solid #BC711D;
+}
+
+.title{
+    flex: 1;
+    margin-left: 10px;
+    border-bottom: 1px solid rgb(232, 230, 230);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.title .sm-r,.sm-l{
+    position: absolute;
+    bottom: 5px;
+}
+
+.title .sm-r{
+    right: 10px;
+}
+
+.title span{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 25px;
+    color: rgb(166, 165, 165);
+}
+
+.tasks{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.day{
+    display: flex;
+    flex: 1;
+}
+
+.day-name{
+    justify-content: space-between;
+}
+
+.day-name .add-cours{
+    font-size: 25px;
+    color: rgb(11, 170, 14);
+    cursor: pointer;
+} 
+
+.day-name, .hour-name{
+    padding: 10px;
+    border: 1px solid #40281A;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-radius: 15px 0 0 15px;
+}
+
+.hours{
+    display: flex;
+    align-items: center;
+}
+
+.hour-content{
+    flex: 6;
+    display: flex;
+}
+
+.hour-content small, .cours{
+    flex: 1;
+}
+
+.cours.efface{
+    display: none;
+}
+
+.cours{
+    background-color: #71BCF3;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.cours h3, small{
+    margin: 0;
+}
+
+.cours h3{
+    font-size: larger;
+}
+
+.cours small{
+    font-size: 11px;
+}
+
+
+.day-content{
+    display: flex;
+    border-bottom: 1px solid #40281A;
+    border-top: 1px solid #40281A;
+    flex: 6;
+    position: relative;
+    border-radius: 0 10px 10px 0;
+    background-color: #F59520;
+}
+
+.day-content span{
+    margin-bottom: 10px;
+}
+
+h1{
+    font-weight: 900;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card{
+    background-color: rgba(255, 255, 255,0.5);
+    width: 49%;
+    height: 70px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-focus{
+    background-color: #6ACC00;
+}
+
+.card .icon{
+    width: 25px;
+    height: 25px;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(232, 230, 230);
+}
+
+.card .icon img{
+    width: 50%;
+}
+
+.card *{
+    position: absolute;
+}
+
+.card span:nth-child(1){
+    right: 10px;
+    top: 10px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.card span:nth-child(3){
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+}
+
+.delete-cours{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color: #ED2B2F;
+    font-weight: 900;
+}
+.delete-cours:hover{
+    cursor: pointer;
+}
+
+.hours{
+    display: flex;
+}
+
+.blue-color{
+    background-color: #71BCF3;
+}
+
+.my-color {
+    background-color: rgb(232, 230, 230);
+    /* background-color: #BC711D; */
+}
+.green-color{
+    background-color: #6ACC00;
+}
+
+.red-color{
+    background-color: #ED2B2F;
+}
+
+.orange-color{
+    background-color: #F68C00;
+}
+
+.gray-color{
+    background-color: #9B9BA5;
+}
+
+
+.active{
+    color: #fff;
+}
+.active#enseignants{
+    background-color: #71BCF3;
+}
+.active#salles{
+    background-color: #6ACC00;
+}
+.active#classes{
+    background-color: #F68C00;
+}
+.active#modules{
+    background-color: #ED2B2F;
+}
+#ajout:hover{
+    cursor: pointer;
+}
+
+.modal.open{
+    display: flex;
+}
+
+
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-content{
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal .modal-content .modal-header{
+    background-color: rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+.modal .modal-content .modal-body{
+    flex: 5;
+}
+.modal .modal-content .modal-footer{
+    background-color: rgba(0, 0, 0, 0.1);
+    flex: 1;
+    
+}
+.modal .modal-content .modal-footer .btn{
+    padding: 5px 10px ;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.modal .modal-content .modal-footer .btn-primary:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+    border-color: #fff;
+}
+.modal .modal-content .modal-footer .btn-danger:hover{
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border-color: #fff;
+}
+
+.modal-center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal .hr{
+    height: 3px;
+    width: 500px;
+    background-color: #71BCF3;
+}
+
+.error-modal{
+    color: red;
+    text-align: center;
+}
+.ajouter.open{
+    display: flex;
+}
+
+.ajouter,.ajouter-module,.ajouter-salle,.ajouter-classe,.ajouter-enseignant{
+    position :absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center; 
+    top: 0;
+    left: 0;  
+}
+
+.ajouter .ajouter-content{
+    width: 30%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ajouter .ajouter-content .ajouter-header{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.ajouter .ajouter-content .ajouter-body{
+    flex: 2;
+    padding: 0;
+}
+.ajouter .ajouter-content .ajouter-footer{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: center;   
+    padding: 10px 0 10px 0;
+}
+.ajouter .ajouter-content .btn{
+    padding: 8px 15px 8px 15px;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+.ajouter .ajouter-content .btn:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+}
+#btn-fermer{
+    padding: 5px 15px 5px 15px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: -2px;
+}
+#btn-fermer:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.ajouter-module.open{
+    display: flex;
+}
+
+.ajouter-module .form, .ajouter-salle .form, .ajouter-classe .form {
+    background-color: white;
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ajouter-module .form-control label,input{
+    display: block;
+}
+
+.ajouter-module .form-control input{
+    border: 2px solid #929191;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+}
+.ajouter-module .form .form-header, .ajouter-module .form-btn{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.ajouter-module .form-control{
+    flex: 3;
+    margin-top: 15px;
+}
+.ajouter-module .form-btn{
+    flex: 1;
+    padding: 5px 0 5px 0;
+}
+.ajouter-module .form-btn #btn-ajouter-module{
+    margin-right: 20px;
+}
+
+.ajouter-module .form-btn #btn-ajouter-module, #btn-annuler-module{
+    padding: 0 10px 0 10px ;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.ajouter-module .form-btn #btn-ajouter-module:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+    border-color: #fff;
+}
+.ajouter-module .form-btn #btn-annuler-module:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-color: #fff;
+}
+.ajouter-module .form-control small{
+    color: red;
+    visibility: hidden;
+}
+.ajouter-module .form-control.error small{
+    visibility: visible;
+}
+
+.ajouter-salle.open {
+    display: flex;
+}
+.ajouter-salle .form{
+    height: 40%;
+}
+.ajouter-salle .form .form-header, .ajouter-salle .form-btn{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.ajouter-salle .form-control{
+    flex: 2;
+    margin-top: 15px;
+}
+
+
+.ajouter-salle .form-control input{
+    border: 2px solid #929191;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.ajouter-salle .form-btn{
+    flex: 1;
+    padding: 5px 0 5px 0;
+}
+.ajouter-salle .form-btn #btn-ajouter-salle{
+    margin-right: 20px;
+}
+
+.ajouter-salle .form-btn #btn-ajouter-salle, #btn-annuler-salle{
+    padding: 0 10px 0 10px ;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.ajouter-salle .form-btn #btn-ajouter-salle:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+    border-color: #fff;
+}
+.ajouter-salle .form-btn #btn-annuler-salle:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-color: #fff;
+}
+.ajouter-salle .form-control small{
+    color: red;
+    visibility: hidden;
+}
+.ajouter-salle .form-control.error small{
+    visibility: visible;
+}
+
+.ajouter-classe.open {
+    display: flex;
+}
+.ajouter-classe .form{
+    height: 40%;
+}
+.ajouter-classe .form .form-header, .ajouter-classe .form-btn{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.ajouter-classe .form-control{
+    flex: 2;
+    margin-top: 15px;
+}
+
+
+.ajouter-classe .form-control input{
+    border: 2px solid #929191;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.ajouter-classe .form-btn{
+    flex: 1;
+    padding: 5px 0 5px 0;
+}
+.ajouter-classe .form-btn #btn-ajouter-classe{
+    margin-right: 20px;
+}
+
+.ajouter-classe .form-btn #btn-ajouter-classe, #btn-annuler-classe{
+    padding: 0 10px 0 10px ;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.ajouter-classe .form-btn #btn-ajouter-classe:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+    border-color: #fff;
+}
+.ajouter-classe .form-btn #btn-annuler-classe:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-color: #fff;
+}
+.ajouter-classe .form-control small{
+    color: red;
+    visibility: hidden;
+}
+.ajouter-classe .form-control.error small{
+    visibility: visible;
+}
+
+/* Enseignant */
+
+.ajouter-enseignant.open{
+    display: flex;
+}
+
+.ajouter-enseignant .form{
+    background-color: white;
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.ajouter-enseignant .form-control #enseignantname{
+    border: 2px solid #929191;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+}
+.ajouter-enseignant .form .form-header, .ajouter-enseignant .form-btn{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.ajouter-enseignant .form-control{
+    flex: 3;
+    margin-top: 15px;
+}
+.ajouter-enseignant .form-btn{
+    flex: 1;
+    padding: 10px 0 10px 0;
+}
+.ajouter-enseignant .form-btn #btn-ajouter-enseignant{
+    margin-right: 20px;
+}
+
+.ajouter-enseignant .form-btn #btn-ajouter-enseignant, #btn-annuler-enseignant{
+    padding: 5px 10px 5px 10px ;
+    border: 1px solid black;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.ajouter-enseignant .form-btn #btn-ajouter-enseignant:hover{
+    cursor: pointer;
+    background-color: #04ff0d;
+    color: white;
+    border-color: #fff;
+}
+.ajouter-enseignant .form-btn #btn-annuler-enseignant:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border-color: #fff;
+}
+.ajouter-enseignant .form-control small{
+    color: red;
+    visibility: hidden;
+}
+.ajouter-enseignant .form-control.error small{
+    visibility: visible;
+}
+#kokou{
+    display: none;
+}
+/*.ajouter-enseignant{
+    display: flex;
+}*/
+.ajouter-enseignant .form .form-control .checkbox{
+    display: flex;
+}
+.ajouter-enseignant .form .form-control .checkbox .option{
+    margin-right: 10px;
+}
+
+.afficher.open{
+    display: flex;
+}
+
+
+.afficher{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.afficher-content{
+    width: 40%;
+    height: 60%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px -1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.afficher-photo{
+    height: 100%;
+    width: 40%;
+    background-image: url("img/photo_de_moi.jpg");
+    background-size: cover;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+#bouton-afficher:hover{
+    cursor: pointer;
+}
